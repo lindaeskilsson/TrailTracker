@@ -33,3 +33,7 @@ build/
 .vscode/
 
 Javaprogrammering/
+
+/data/
+*.mv.db
+*.trace.db
