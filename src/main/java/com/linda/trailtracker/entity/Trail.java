@@ -26,10 +26,11 @@ public class Trail {
     private int timeMinutes;
     private int elevationGain;
     private String description;
+    private String location;
 
     protected Trail() {}
 
-    protected Trail(String name, LocalDate date, double distanceKm, int timeMinutes, int elevationGain, String description) {
+    protected Trail(String name, LocalDate date, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
         this.name = name;
         this.distanceKm = distanceKm;
         this.timeMinutes = timeMinutes;
@@ -39,7 +40,6 @@ public class Trail {
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
@@ -59,7 +59,31 @@ public class Trail {
     public String getDescription() {
         return description;
     }
+    public String getLocation() {
+        return location;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDistanceKm(double distanceKm) {
+        this.distanceKm = distanceKm;
+    }
+
+    public void setTimeMinutes(int timeMinutes) {
+        this.timeMinutes = timeMinutes;
+    }
+
+    public void setElevationGain(int elevationGain) {
+        this.elevationGain = elevationGain;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

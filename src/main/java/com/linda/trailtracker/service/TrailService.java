@@ -11,4 +11,16 @@ public class TrailService {
     public TrailService(TrailRepository repository) {
         this.repository = repository;
     }
+
+    //hämta alla trails
+
+    // Hämta trail via Id
+
+    // skapa trail
+
+    // uppdatera trail
+
+    // ta bort trail
+
+    
 }
