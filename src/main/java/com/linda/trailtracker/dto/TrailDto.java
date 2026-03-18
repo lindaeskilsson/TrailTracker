@@ -1,0 +1,94 @@
+package com.linda.trailtracker.dto;
+
+import java.time.LocalDateTime;
+
+public class TrailDto {
+
+    private Long id;
+    private String name;
+    private int distanceKm;
+    private int elevationGain;
+    private int timeMinutes;
+    private String description;
+    private String location;
+    private LocalDateTime createdAt;
+
+    public TrailDto() {
+    }
+
+    public TrailDto(Long id, String name, int distanceKm, int elevationGain, int timeMinutes,
+                    String description, String location, LocalDateTime createdAt){
+        this.id = id;
+        this.name = name;
+        this.distanceKm = distanceKm;
+        this.elevationGain = elevationGain;
+        this.timeMinutes = timeMinutes;
+        this.description = description;
+        this.location = location;
+        this.createdAt = createdAt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDistanceKm() {
+        return distanceKm;
+    }
+
+    public void setDistanceKm(int distanceKm) {
+        this.distanceKm = distanceKm;
+    }
+
+    public int getElevationGain() {
+        return elevationGain;
+    }
+
+    public void setElevationGain(int elevationGain) {
+        this.elevationGain = elevationGain;
+    }
+
+    public int getTimeMinutes() {
+        return timeMinutes;
+    }
+
+    public void setTimeMinutes(int timeMinutes) {
+        this.timeMinutes = timeMinutes;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+}

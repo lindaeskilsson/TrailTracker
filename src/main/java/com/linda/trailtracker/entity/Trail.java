@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Trail {
@@ -19,7 +19,7 @@ public class Trail {
     @NotBlank
     private String name;
 
-    private LocalDate date;
+    private LocalDateTime createdAt;
 
     @Positive
     private double distanceKm;
@@ -30,7 +30,7 @@ public class Trail {
 
     protected Trail() {}
 
-    protected Trail(String name, LocalDate date, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
+    protected Trail(String name, LocalDateTime createdAt, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
         this.name = name;
         this.distanceKm = distanceKm;
         this.timeMinutes = timeMinutes;
@@ -43,8 +43,8 @@ public class Trail {
     public String getName() {
         return name;
     }
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
     public double getDistanceKm() {
         return distanceKm;
