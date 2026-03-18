@@ -30,11 +30,14 @@ public class Trail {
 
     public Trail() {}
 
-    protected Trail(String name, LocalDateTime createdAt, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
+    public Trail(String name, LocalDateTime createdAt, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
         this.name = name;
+        this.createdAt = createdAt;
         this.distanceKm = distanceKm;
         this.timeMinutes = timeMinutes;
         this.elevationGain = elevationGain;
+        this.description = description;
+        this.location = location;
     }
 
     public Long getId() {
