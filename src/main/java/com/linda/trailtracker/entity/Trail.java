@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Trail {
@@ -19,32 +19,35 @@ public class Trail {
     @NotBlank
     private String name;
 
-    private LocalDate date;
+    private LocalDateTime createdAt;
 
     @Positive
     private double distanceKm;
     private int timeMinutes;
     private int elevationGain;
     private String description;
+    private String location;
 
-    protected Trail() {}
+    public Trail() {}
 
-    protected Trail(String name, LocalDate date, double distanceKm, int timeMinutes, int elevationGain, String description) {
+    public Trail(String name, LocalDateTime createdAt, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
         this.name = name;
+        this.createdAt = createdAt;
         this.distanceKm = distanceKm;
         this.timeMinutes = timeMinutes;
         this.elevationGain = elevationGain;
+        this.description = description;
+        this.location = location;
     }
 
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
     public double getDistanceKm() {
         return distanceKm;
@@ -59,7 +62,35 @@ public class Trail {
     public String getDescription() {
         return description;
     }
+    public String getLocation() {
+        return location;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDistanceKm(double distanceKm) {
+        this.distanceKm = distanceKm;
+    }
+
+    public void setTimeMinutes(int timeMinutes) {
+        this.timeMinutes = timeMinutes;
+    }
+
+    public void setElevationGain(int elevationGain) {
+        this.elevationGain = elevationGain;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
