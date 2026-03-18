@@ -6,7 +6,7 @@ public class TrailDto {
 
     private Long id;
     private String name;
-    private int distanceKm;
+    private double distanceKm;
     private int elevationGain;
     private int timeMinutes;
     private String description;
@@ -16,7 +16,7 @@ public class TrailDto {
     public TrailDto() {
     }
 
-    public TrailDto(Long id, String name, int distanceKm, int elevationGain, int timeMinutes,
+    public TrailDto(Long id, String name, double distanceKm, int elevationGain, int timeMinutes,
                     String description, String location, LocalDateTime createdAt){
         this.id = id;
         this.name = name;
@@ -44,11 +44,11 @@ public class TrailDto {
         this.name = name;
     }
 
-    public int getDistanceKm() {
+    public double getDistanceKm() {
         return distanceKm;
     }
 
-    public void setDistanceKm(int distanceKm) {
+    public void setDistanceKm(double distanceKm) {
         this.distanceKm = distanceKm;
     }
 

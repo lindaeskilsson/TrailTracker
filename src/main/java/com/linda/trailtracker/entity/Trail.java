@@ -28,7 +28,7 @@ public class Trail {
     private String description;
     private String location;
 
-    protected Trail() {}
+    public Trail() {}
 
     protected Trail(String name, LocalDateTime createdAt, double distanceKm, int timeMinutes, int elevationGain, String description, String location) {
         this.name = name;

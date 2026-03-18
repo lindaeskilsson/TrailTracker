@@ -11,7 +11,7 @@ public class CreateTrailDto {
     private String name;
 
     @Min(value = 1, message = "Distance must be at least 1 km")
-    private int distanceKm;
+    private double distanceKm;
 
     @Min(value = 0, message = "Elevation gain cannot be negative")
     private int elevationGain;
@@ -39,11 +39,11 @@ public class CreateTrailDto {
         this.name = name;
     }
 
-    public int getDistanceKm() {
+    public double getDistanceKm() {
         return distanceKm;
     }
 
-    public void setDistanceKm(int distanceKm) {
+    public void setDistanceKm(double distanceKm) {
         this.distanceKm = distanceKm;
     }
 
