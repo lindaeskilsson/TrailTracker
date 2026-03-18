@@ -1,26 +1,29 @@
 package com.linda.trailtracker.service;
 
-import com.linda.trailtracker.entity.Trail;
-import com.linda.trailtracker.repository.TrailRepository;
-import org.springframework.stereotype.Service;
 
-@Service
-public class TrailService {
-    private final TrailRepository repository;
+import com.linda.trailtracker.dto.CreateTrailDto;
+import com.linda.trailtracker.dto.TrailDto;
+import com.linda.trailtracker.dto.UpdateTrailDto;
 
-    public TrailService(TrailRepository repository) {
-        this.repository = repository;
-    }
+import java.util.List;
 
-    //hämta alla trails
+public interface TrailService {
 
-    // Hämta trail via Id
+    List<TrailDto> getAllTrails();
 
-    // skapa trail
+    TrailDto getTrailDtoById(Long id);
 
-    // uppdatera trail
+    TrailDto createTrail(CreateTrailDto createTrailDto);
 
-    // ta bort trail
+    TrailDto updateTrail(Long id, UpdateTrailDto updateTrailDto);
 
-    
+    void deleteTrail(Long id);
+
+    List<TrailDto> getTrailsByName(String name);
+
+    List<TrailDto> getTrailsByLocation(String location);
+
+    List<TrailDto> getTrailsByDistanceBetween(double min, double max);
+
+    List<TrailDto> getTrailsByLocationAndDistance(String location, double distanceKm);
 }

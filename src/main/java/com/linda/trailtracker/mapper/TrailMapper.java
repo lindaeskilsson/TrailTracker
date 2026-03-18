@@ -4,7 +4,9 @@ import com.linda.trailtracker.dto.CreateTrailDto;
 import com.linda.trailtracker.dto.TrailDto;
 import com.linda.trailtracker.dto.UpdateTrailDto;
 import com.linda.trailtracker.entity.Trail;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TrailMapper {
 
     //CreateTrailDto -> Trail

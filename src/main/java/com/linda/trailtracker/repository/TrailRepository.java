@@ -15,7 +15,7 @@ public interface TrailRepository extends ListCrudRepository<Trail, Long> {
 
     List<Trail> findByLocationAndDistanceKm(String location, double distanceKm);
 
-    List<Trail> findByDistanceKm(int min, int max);
+    List<Trail> findByDistanceKmBetween(double min, double max);
 
     boolean existsByNameAndLocation(String name, String location);
 }

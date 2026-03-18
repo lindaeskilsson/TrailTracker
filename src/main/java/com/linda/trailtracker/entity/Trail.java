@@ -86,4 +86,8 @@ public class Trail {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }
