@@ -13,6 +13,9 @@
         <th>Namn</th>
         <th>Distans</th>
         <th>Plats</th>
+        <th>Tidsåtgång i minuter</th>
+        <th>Höjdmeter</th>
+        <th>Beskrivning</th>
     </tr>
     </thead>
     <tbody>
@@ -20,9 +23,12 @@
         <td th:text="${trail.name}"></td>
         <td th:text="${trail.distanceKm}"></td>
         <td th:text="${trail.location}"></td>
+        <td th:text="${trail.timeMinutes}"></td>
+        <td th:text="${trail.elevationGain}"></td>
+        <td th:text="${trail.description}"></td>
     </tr>
     </tbody>
 </table>
-
+<a th:href="@{/trails/new}">Skapa ny trail</a>
 </body>
 </html>

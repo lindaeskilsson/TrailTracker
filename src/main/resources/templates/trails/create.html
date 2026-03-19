@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Skapa trail</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Skapa ny trail</h1>
+
+<form th:action="@{/trails}" th:object="${trail}" method="post">
+
+    <div>
+        <label>Namn:</label>
+        <input type="text" th:field="*{name}" />
+    </div>
+
+    <div>
+        <label>Distans (km):</label>
+        <input type="number" step="0.1" th:field="*{distanceKm}" />
+    </div>
+
+    <div>
+        <label>Tid (min):</label>
+        <input type="number" th:field="*{timeMinutes}" />
+    </div>
+
+    <div>
+        <label>Höjdmeter:</label>
+        <input type="number" th:field="*{elevationGain}" />
+    </div>
+
+    <div>
+        <label>Beskrivning:</label>
+        <input type="text" th:field="*{description}" />
+    </div>
+
+    <div>
+        <label>Plats:</label>
+        <input type="text" th:field="*{location}" />
+    </div>
+
+    <button type="submit">Spara</button>
+</form>
+
+</body>
+</html>
