@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alla trails</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Alla trails</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Namn</th>
+        <th>Distans</th>
+        <th>Plats</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trail : ${trails}">
+        <td th:text="${trail.name}"></td>
+        <td th:text="${trail.distanceKm}"></td>
+        <td th:text="${trail.location}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
