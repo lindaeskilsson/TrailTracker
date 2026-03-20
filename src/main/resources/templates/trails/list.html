@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alla trails</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Alla trails</h1>
+
+<table >
+    <thead>
+    <tr>
+        <th>Namn</th>
+        <th>Distans</th>
+        <th>Plats</th>
+        <th>Tidsåtgång i minuter</th>
+        <th>Höjdmeter</th>
+        <th>Beskrivning</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trail : ${trails}">
+        <td th:text="${trail.name}">Namn</td>
+        <td th:text="${trail.distanceKm}">0</td>
+        <td th:text="${trail.location}">Plats</td>
+        <td th:text="${trail.timeMinutes}">0</td>
+        <td th:text="${trail.elevationGain}">0</td>
+        <td th:text="${trail.description}">Beskrivning</td>
+        <td>
+            <a th:href="@{/trails/{id}/edit(id=${trail.id})}">
+                Uppdatera trail
+            </a>
+
+            <form th:action="@{/trails/{id}/delete(id=${trail.id})}"
+                  method="post"
+                  style="display:inline; margin-left:10px;">
+
+                <button type="submit" onclick="return confirm('Är du säker?')">
+                    Ta bort trail från lista
+                </button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/trails/new}">Skapa ny trail</a>
+
+
+</body>
+</html>
