@@ -24,7 +24,6 @@ public class UpdateTrailDto {
     @Size(max = 30, message = "Location can have at most 30 chars")
     private String location;
 
-    @NotBlank(message = "Time duration is required")
     @Min(value = 1, message = "Time must be more than one minute")
     private int timeMinutes;
 

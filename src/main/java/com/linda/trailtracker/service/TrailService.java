@@ -26,4 +26,5 @@ public interface TrailService {
     List<TrailDto> getTrailsByDistanceBetween(double min, double max);
 
     List<TrailDto> getTrailsByLocationAndDistance(String location, double distanceKm);
+    
 }

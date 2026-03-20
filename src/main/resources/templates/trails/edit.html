@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Trail</title>
+</head>
+<body>
+<h1>Redigera trail</h1>
+
+<form th:action="@{/trails/{id}/edit(id=${trailId})}" th:object="${trail}" method="post">
+    <label>Namn:</label>
+    <input type="text" th:field="*{name}" />
+
+    <label>Distans:</label>
+    <input type="number" step="0.1" th:field="*{distanceKm}" />
+
+    <label>Tid:</label>
+    <input type="number" th:field="*{timeMinutes}" />
+
+    <label>Höjdmeter:</label>
+    <input type="number" th:field="*{elevationGain}" />
+
+    <label>Beskrivning:</label>
+    <input type="text" th:field="*{description}" />
+
+    <label>Plats:</label>
+    <input type="text" th:field="*{location}" />
+
+    <button type="submit">Spara ändringar</button>
+</form>
+
+</body>
+</html>

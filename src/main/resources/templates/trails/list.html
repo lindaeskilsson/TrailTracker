@@ -20,15 +20,19 @@
     </thead>
     <tbody>
     <tr th:each="trail : ${trails}">
-        <td th:text="${trail.name}"></td>
-        <td th:text="${trail.distanceKm}"></td>
-        <td th:text="${trail.location}"></td>
-        <td th:text="${trail.timeMinutes}"></td>
-        <td th:text="${trail.elevationGain}"></td>
-        <td th:text="${trail.description}"></td>
+        <td th:text="${trail.name}">Namn</td>
+        <td th:text="${trail.distanceKm}">0</td>
+        <td th:text="${trail.location}">Plats</td>
+        <td th:text="${trail.timeMinutes}">0</td>
+        <td th:text="${trail.elevationGain}">0</td>
+        <td th:text="${trail.description}">Beskrivning</td>
+        <td>
+            <a th:href="@{/trails/{id}/edit(id=${trail.id})}">Redigera</a>
+        </td>
     </tr>
     </tbody>
 </table>
 <a th:href="@{/trails/new}">Skapa ny trail</a>
+
 </body>
 </html>
