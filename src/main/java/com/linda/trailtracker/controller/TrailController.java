@@ -73,4 +73,11 @@ public class TrailController {
         trailService.updateTrail(id, dto);
         return "redirect:/trails";
     }
+
+    //Delete trail
+    @PostMapping("/{id}/delete")
+    public String deleteTrail(@PathVariable Long id) {
+        trailService.deleteTrail(id);
+        return "redirect:/trails";
+    }
 }

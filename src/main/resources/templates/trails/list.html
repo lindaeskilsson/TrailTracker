@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Alla trails</title>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 <body>
 <h1>Alla trails</h1>
 
-<table border="1">
+<table >
     <thead>
     <tr>
         <th>Namn</th>
@@ -27,12 +27,24 @@
         <td th:text="${trail.elevationGain}">0</td>
         <td th:text="${trail.description}">Beskrivning</td>
         <td>
-            <a th:href="@{/trails/{id}/edit(id=${trail.id})}">Redigera</a>
+            <a th:href="@{/trails/{id}/edit(id=${trail.id})}">
+                Uppdatera trail
+            </a>
+
+            <form th:action="@{/trails/{id}/delete(id=${trail.id})}"
+                  method="post"
+                  style="display:inline; margin-left:10px;">
+
+                <button type="submit" onclick="return confirm('Är du säker?')">
+                    Ta bort trail från lista
+                </button>
+            </form>
         </td>
     </tr>
     </tbody>
 </table>
 <a th:href="@{/trails/new}">Skapa ny trail</a>
+
 
 </body>
 </html>

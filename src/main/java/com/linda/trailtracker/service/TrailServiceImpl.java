@@ -69,37 +69,4 @@ public class TrailServiceImpl implements TrailService {
 
         trailRepository.delete(trail);
     }
-
-    @Override
-    public List<TrailDto> getTrailsByName(String name) {
-        return trailRepository.findByName(name)
-                .stream()
-                .map(trailMapper::toDto)
-                .toList();
-    }
-
-    @Override
-    public List<TrailDto> getTrailsByLocation(String location) {
-        return trailRepository.findByLocation(location)
-                .stream()
-                .map(trailMapper::toDto)
-                .toList();
-    }
-
-    public List<TrailDto> getTrailsByDistanceBetween(double min, double max) {
-        return trailRepository.findByDistanceKmBetween(min, max)
-                .stream()
-                .map(trailMapper::toDto)
-                .toList();
-    }
-
-    @Override
-    public List<TrailDto> getTrailsByLocationAndDistance(String location, double distanceKm) {
-        return trailRepository.findByLocationAndDistanceKm(location, distanceKm)
-                .stream()
-                .map(trailMapper::toDto)
-                .toList();
-    }
-
-
 }

@@ -19,12 +19,4 @@ public interface TrailService {
 
     void deleteTrail(Long id);
 
-    List<TrailDto> getTrailsByName(String name);
-
-    List<TrailDto> getTrailsByLocation(String location);
-
-    List<TrailDto> getTrailsByDistanceBetween(double min, double max);
-
-    List<TrailDto> getTrailsByLocationAndDistance(String location, double distanceKm);
-    
 }
