@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import java.time.LocalDateTime;
 
@@ -18,9 +19,9 @@ public class TrailTrackerApplication {
     }
 
     @Bean
+    @Profile("!test")
     CommandLineRunner initData(TrailRepository trailRepository) {
         return args -> {
-
             trailRepository.save(new Trail(
                     "Åreskutan runt",
                     LocalDateTime.now(),
@@ -42,4 +43,6 @@ public class TrailTrackerApplication {
             ));
         };
     }
+
+
 }

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class TrailDto {
 
-    final Long id;
+    private Long id;
     private String name;
     private double distanceKm;
     private int elevationGain;
@@ -25,6 +25,9 @@ public class TrailDto {
         this.createdAt = createdAt;
     }
 
+    public TrailDto() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -40,11 +43,6 @@ public class TrailDto {
     public double getDistanceKm() {
         return distanceKm;
     }
-
-    public void setDistanceKm(double distanceKm) {
-        this.distanceKm = distanceKm;
-    }
-
     public int getElevationGain() {
         return elevationGain;
     }

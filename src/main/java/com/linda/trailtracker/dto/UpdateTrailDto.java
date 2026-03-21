@@ -28,6 +28,10 @@ public class UpdateTrailDto {
     @Min(value = 1, message = "Time must be more than one minute")
     private int timeMinutes;
 
+
+    public UpdateTrailDto() {
+    }
+
     public String getName() {
         return name;
     }
