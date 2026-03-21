@@ -34,10 +34,16 @@ public class TrailController {
         return "trails/create";
     }
 
-    @PostMapping
-    public String createTrail(@ModelAttribute("trail") CreateTrailDto dto){
+    @PostMapping("/new")
+    public String createTrail(@Valid @ModelAttribute("trail") CreateTrailDto dto,
+                              BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "trails/create";
+        }
+
         trailService.createTrail(dto);
-    return "redirect:/trails";
+        return "redirect:/trails";
     }
 
     //Update trail, hämta via id
@@ -73,7 +79,6 @@ public class TrailController {
         trailService.updateTrail(id, dto);
         return "redirect:/trails";
     }
-
     //Delete trail
     @PostMapping("/{id}/delete")
     public String deleteTrail(@PathVariable Long id) {
